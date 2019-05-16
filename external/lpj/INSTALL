@@ -1,0 +1,108 @@
+Installation of lpj C Version 0.9.025
+=====================================
+
+Installation for Unix-like systems
+----------------------------------
+
+This text describes how to install lpj on your system. 
+The code has been tested for AIX, Linux, and Windows 
+with cygwin. Cygwin is a linux like environment for 
+Windows (http://www.cygwin.com)
+
+create lpj directory:
+
+mkdir lpj
+
+Go to lpj directory:
+
+cd lpj
+
+untar source and data files
+
+gzip -cd lpj-0.9.025.tar.gz|tar -xf -
+gzip -cd cru.tar.gz|tar -xf -
+
+Directory tree after extracting tar files:
+
+--lpj
+  |
+  +--par        : Parameter files for Pfts and soils
+  |
+  +--input      : input data sets for climate
+  |
+  +--output     : output data (created by make test)
+  |
+  +--lib        : library files (created by make)
+  |
+  +--include    : include files
+  |
+  +--src        : source tree
+     |
+     +--numeric : source for numerical routines
+     |
+     +--base    : base functionality of lpj
+     |
+     +--climate : climate code 
+     |
+     +--lpj     : lpj update functions
+     |
+     +--soil    : soil code
+     |
+     +--grass   : grass Pft code
+     |
+     +--tree    : tree Pft code
+         
+Configure for your operating system:
+
+./configure.sh
+
+If configure scripts exits with message "Unsupported operating system",
+Makefile.$osname is created from Makefile.gcc and probably has to be 
+modified for your operating system/compiler.
+
+Create executables:
+
+make all   
+
+Two executable are created: 
+
+lpj    - LPJ simulation code
+catlpj - utitility to concatenate restart files
+
+Test lpj with sample lpj.conf file:
+
+make test
+
+The shell script distribute.sh can be used to create *.conf files in order to 
+divide the simulation  into pieces:
+
+./distribute.sh <number of pieces> [<number of grid cells>]
+
+Installation for Windows XP without cygwin
+------------------------------------------
+
+The code has been tested on Windows XP using the free Microsoft C++ compiler
+ and nmake. The compiler can be obtained from 
+http://msdn.microsoft.com/visualc/vctoolkit2003/
+To compile with the cpp preprocessing of the configutation/data files enabled, 
+the Microsoft SDK is needed. It can be downloaded from the Microsoft server.
+
+
+Unzip the source and data files
+
+configure makefile:
+
+configure.bat
+
+create lpj executable:
+
+nmake 
+
+
+By default lpj does not use the cpp preprocessor. .conf files have to be 
+preprocessed by invoking 
+
+cl /ep filename.conf
+
+Preprocessing can be enabled by compiling with the -DUSE_CPP flag in 
+Makefile.inc

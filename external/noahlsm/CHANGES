@@ -1,0 +1,74 @@
+------------------------------------------------------------------------------
+Changes to Noah LSM version 3.2 since version 3.1
+------------------------------------------------------------------------------
+
+   * Z0 for snow cover
+
+       - Roughness length Z0 over snow-covered surfaces has been modified
+         (subroutine SNOWZ0) to account for the accumulation of snow
+         burying the surface features which contribute to roughness.
+
+         An "effective" roughness length for the snow-covered surface is
+         computed, Z0EFF.  For deep snow, Z0EFF is set to 0.001 (deep snow
+         covering the roughness features of the surface).  For shallower
+         snow, Z0EFF is set to the snow-free roughness length, Z0BRD,
+         reduced by SNOWH/7.
+
+         To account for fractional snow cover, the final Z0 term is
+         computed as a weighted average between the snow-free Z0BRD value
+         and the effective snow albedo, Z0EFF.
+
+   * LVCOEF:
+
+       - The surface albedo in the presence of snowcover (subroutine
+         ALCALC) is computed following Livneh.  In version 3.2, this has
+         been implemented with a user-definable coefficient, LVCOEF, set
+         in file GENPARM.TBL.  LVCOEF should range between zero and one.
+
+         The Livneh scheme boosts the snow albedo toward 85%, then reduces
+         it according to the age of the snow.  LVCOEF controls how much
+         the albedo is boosted toward 85%.  A default value LVCOEF=0.5
+         will have the same results as in version 3.1, i.e., an average of
+         the input SNOALB (which tends to range from around 50% to around
+         75%) and 85%.  Values lower than 0.5 will tune this more toward
+         the incoming SNOALB (and ultimately lower albedos).  Values
+         greater than 0.5 will tune this more toward 85% (and ultimately
+         higher albedos).
+
+   * SMAV:
+
+       - SMAV: Soil moisture availability at each soil layer, computed as a
+         fraction between the wilting point SMCWLT (SMAV=0.0) and
+         saturation soil moisture SMCMAX (SMAV=1.0).  No effect on model
+         results.  Diagnostic field output in WRF as "SMCREL: Relative soil
+         moisture".
+
+   * FLX1:
+
+       - The FLX1 term needs to account for the exchange of heat required
+         to change the temperature of falling precipitation from air
+         temperature to skin temperature.  This exchange is considered in
+         computing fluxes and skin temperature, but for rain events, was
+         not included in the budget term FLX1.  So the energy budget would
+         show large residual values for rain events.  This correction has
+         no effect on the model integration, but will make the budget
+         calculations which use FLX1 more accurate.
+
+   * DTOT:
+
+       - Polar modification: over sea/land ice points, DTOT is limited so
+         as not to effectively shut off heat exchange between soil (i.e.,
+         ice) layers and the surface.  In SNOPAC, this limit was applied
+         regardless of surface type (ice or land).  In Version 3.2, this
+         has been corrected to apply only to sea/land ice points.  Could
+         have some effect on results in areas of deep snow.
+
+   * RC:
+
+       - Canopy Resistance, RC, normally set in the call to subroutine
+         CANRES, is set to zero if CANRES is not called because SHDFAC is
+         0.  This change should have no effect on model integration, but
+         since RC is an output variable, this change insures that the field
+         is initialized where there is no vegetation.  This was not an
+         issue for Noah as coupled to WRF, but was causing troubles in some
+         standalone applications of Noah LSM.

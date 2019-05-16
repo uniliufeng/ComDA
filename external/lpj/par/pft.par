@@ -1,0 +1,292 @@
+/**********************************************************************/
+/*                                                                    */
+/*                   p  f  t  .  p  a  r                              */
+/*                                                                    */
+/*   PFT parameter file                                               */
+/*                                                                    */
+/*   Last change: 16.06.2004                                          */
+/*                                                                    */
+/**********************************************************************/
+
+#include "../include/pftpar.h" /* include constant definitions */
+
+#define CTON_LEAF 29
+#define CTON_ROOT 29
+#define CTON_SAP 330
+
+9 /* number of pft's */
+
+/* first pft */
+TROPICAL_BROADLEAVED_EVERGREEN_TREE
+"tropical broadleaved evergreen tree"
+TREE
+0.85  		/* rootdist[0] 1 */
+0.0  		/* minwscal 3*/
+0.5  		/* gmin 4*/
+0.2		/* respcoeff 5*/
+100  		/* nmax 7*/
+0.12  		/* resist 8*/
+2.0  		/* sla 10*/
+1.0  		/* lmro_ratio 18*/
+1000  		/* ramp 19*/
+1.500  		/* lai_sapl 21*/
+0.0  		/* gdd5min 30*/
+1000  		/* twmax 31*/
+5.0   		/* gddbase (deg C) 33*/
+-1000  		/* min_temprange 34*/
+7  		/* emax 35*/
+0.02  		/* intc 36*/
+EVERGREEN 	/* phenology */
+C3   		/* pathway */
+2.0 55.0 	/* lower and upper temperature limit for co2 (deg C) 24 27*/
+25 30 		/* lower and upper limit of temperature optimum for photosynthesis(deg C) 25 26*/
+15.5 1000		/* lower and upper coldest monthly mean temperature(deg C) 28 29*/
+BROADLEAVED 	/* leaftype */
+2.0 20.0 2.0  	/* turnover leaf  sapwood root 9 11 12*/
+CTON_LEAF CTON_SAP CTON_ROOT /* C:N mass ratio for leaf, sapwood, and root 13,14,15*/
+15.0  		/* crownarea_max 20*/
+1.2  		/* sapwood sapling 22*/
+/*--------------------------------------------------------------------------*/
+/* 2. pft */
+TROPICAL_BROADLEAVED_RAINGREEN_TREE
+"tropical broadleaved raingreen tree"
+TREE
+0.60  		/* rootdist[0] 1 */
+0.30  		/* minwscal 3*/
+0.5  		/* gmin 4*/
+0.2		/* respcoeff 5*/
+100  		/* nmax 7*/
+0.5  		/* resist 8*/
+0.5  		/* sla 10*/
+1.0  		/* lmro_ratio 18*/
+1000  		/* ramp 19*/
+1.500  		/* lai_sapl 21*/
+0.0  		/* gdd5min 30*/
+1000  		/* twmax 31*/
+5.0   		/* gddbase (deg C) 33*/
+-1000  		/* min_temprange 34*/
+7.0  		/* emax 35*/
+0.02  		/* intc 36*/
+RAINGREEN 	/* phenology */
+C3   		/* pathway */
+2.0 55.0 	/* lower and upper temperature limit for co2 (deg C) 24 27*/
+25 30 		/* lower and upper limit of temperature optimum for photosynthesis(deg C) 25 26*/
+15.5 1000	/* lower and upper coldest monthly mean temperature(deg C) 28 29*/
+BROADLEAVED 	/* leaftype */
+1.0 20  1.0  	/* turnover leaf  sapwood root 9 11 12*/
+CTON_LEAF CTON_SAP CTON_ROOT /* C:N mass ratio for leaf, sapwood, and root 13,14,15*/
+15  		/* crownarea_max 20*/
+1.2  		/* sapwood sapling 22*/
+/*--------------------------------------------------------------------------*/
+/* 3. pft */
+TEMPERATE_NEEDLELEAVED_EVERGREEN_TREE
+"temperate needleleaved evergreen tree"
+TREE
+0.60  		/* rootdist[0] 1 */
+0.00  		/* minwscal 3*/
+0.3  		/* gmin 4*/
+1.2		/* respcoeff 5*/
+100  		/* nmax 7*/
+0.12  		/* resist 8*/
+4.0  		/* sla 10*/
+1.0  		/* lmro_ratio 18*/
+1000  		/* ramp 19*/
+1.500  		/* lai_sapl 21*/
+900.0  		/* gdd5min 30*/
+1000  		/* twmax 31*/
+5.0   		/* gddbase (deg C) 33*/
+-1000  		/* min_temprange 34*/
+5.0  		/* emax 35*/
+0.02  		/* intc 36*/
+EVERGREEN 	/* phenology */
+C3   		/* pathway */
+-4.0 42.0 	/* lower and upper temperature limit for co2 (deg C) 24 27*/
+20 30 		/* lower and upper limit of temperature optimum for photosynthesis(deg C) 25 26*/
+-2.0 20.0	/* lower and upper coldest monthly mean temperature(deg C) 28 29*/
+NEEDLELEAVED 	/* leaftype */
+4.0 20  4.0  	/* turnover leaf  sapwood root 9 11 12*/
+CTON_LEAF CTON_SAP CTON_ROOT /* C:N mass ratio for leaf, sapwood, and root 13,14,15*/
+15  		/* crownarea_max 20*/
+1.2  		/* sapwood sapling 22*/
+/*--------------------------------------------------------------------------*/
+/* 4. pft */
+TEMPERATE_BROADLEAVED_EVERGREEN_TREE
+"temperate broadleaved evergreen tree"
+TREE
+0.70  		/* rootdist[0] 1 */
+0.00  		/* minwscal 3*/
+0.5  		/* gmin 4*/
+1.2		/* respcoeff 5*/
+100  		/* nmax 7*/
+0.5  		/* resist 8*/
+1.0  		/* sla 10*/
+1.0  		/* lmro_ratio 18*/
+1000  		/* ramp 19*/
+1.500  		/* lai_sapl 21*/
+1200.0 		/* gdd5min 30*/
+1000  		/* twmax 31*/
+5.0   		/* gddbase (deg C) 33*/
+-1000  		/* min_temprange 34*/
+5.0  		/* emax 35*/
+0.02  		/* intc 36*/
+EVERGREEN 	/* phenology */
+C3   		/* pathway */
+-4.0 42.0 	/* lower and upper temperature limit for co2 (deg C) 24 27*/
+20 30 		/* lower and upper limit of temperature optimum for photosynthesis(deg C) 25 26*/
+3.0 18.8	/* lower and upper coldest monthly mean temperature(deg C) 28 29*/
+BROADLEAVED 	/* leaftype */
+1.0 20 1.0  	/* turnover leaf  sapwood root 9 11 12*/
+CTON_LEAF CTON_SAP CTON_ROOT /* C:N mass ratio for leaf, sapwood, and root 13,14,15*/
+15  		/* crownarea_max 20*/
+1.2  		/* sapwood sapling 22*/
+/*--------------------------------------------------------------------------*/
+/* 5. pft */
+TEMPERATE_BROADLEAVED_SUMMERGREEN_TREE
+"temperate broadleaved summergreen tree"
+TREE
+0.70  		/* rootdist[0] 1 */
+0.00  		/* minwscal 3*/
+0.5  		/* gmin 4*/
+1.2		/* respcoeff 5*/
+120  		/* nmax 7*/
+0.12  		/* resist 8*/
+0.5  		/* sla 10*/
+1.0  		/* lmro_ratio 18*/
+300  		/* ramp 19*/
+1.500  		/* lai_sapl 21*/
+1200.0 		/* gdd5min 30*/
+1000  		/* twmax 31*/
+5.0   		/* gddbase (deg C) 33*/
+-1000  		/* min_temprange 34*/
+5.0  		/* emax 35*/
+0.02  		/* intc 36*/
+SUMMERGREEN 	/* phenology */
+C3   		/* pathway */
+-4.0 38.0 	/* lower and upper temperature limit for co2 (deg C) 24 27*/
+20 25 		/* lower and upper limit of temperature optimum for photosynthesis(deg C) 25 26*/
+-17.0 15.5	/* lower and upper coldest monthly mean temperature(deg C) 28 29*/
+BROADLEAVED 	/* leaftype */
+1.0 20  1.0  	/* turnover leaf  sapwood root 9 11 12*/
+CTON_LEAF CTON_SAP CTON_ROOT /* C:N mass ratio for leaf, sapwood, and root 13,14,15*/
+15  		/* crownarea_max 20*/
+1.2  		/* sapwood sapling 22*/
+/*--------------------------------------------------------------------------*/
+/* 6. pft */
+BOREAL_NEEDLELEAVED_EVERGREEN_TREE
+"boreal needleleaved evergreen tree"
+TREE
+0.90  		/* rootdist[0] 1 */
+0.00  		/* minwscal 3*/
+0.3  		/* gmin 4*/
+1.2		/* respcoeff 5*/
+100  		/* nmax 7*/
+0.12  		/* resist 8*/
+4.0  		/* sla 10*/
+1.0  		/* lmro_ratio 18*/
+1000  		/* ramp 19*/
+1.500  		/* lai_sapl 21*/
+600 		/* gdd5min 30*/
+23  		/* twmax 31*/
+5.0   		/* gddbase (deg C) 33*/
+-1000  		/* min_temprange 34*/
+5.0  		/* emax 35*/
+0.06  		/* intc 36*/
+EVERGREEN 	/* phenology */
+C3   		/* pathway */
+-4.0 38.0 	/* lower and upper temperature limit for co2 (deg C) 24 27*/
+15 25 		/* lower and upper limit of temperature optimum for photosynthesis(deg C) 25 26*/
+-32.5 -2.0	/* lower and upper coldest monthly mean temperature(deg C) 28 29*/
+NEEDLELEAVED 	/* leaftype */
+4.0 20  4.0  	/* turnover leaf  sapwood root 9 11 12*/
+CTON_LEAF CTON_SAP CTON_ROOT /* C:N mass ratio for leaf, sapwood, and root 13,14,15*/
+15  		/* crownarea_max 20*/
+1.2  		/* sapwood sapling 22*/
+/*--------------------------------------------------------------------------*/
+/* 7. pft */
+BOREAL_BROADLEAVED_SUMMERGREEN_TREE
+"boreal broadleaved summergreen tree"
+TREE
+0.90  		/* rootdist[0] 1 */
+0.00  		/* minwscal 3*/
+0.5  		/* gmin 4*/
+1.2		/* respcoeff 5*/
+100  		/* nmax 7*/
+0.12  		/* resist 8*/
+0.5  		/* sla 10*/
+1.0  		/* lmro_ratio 18*/
+200  		/* ramp 19*/
+1.500  		/* lai_sapl 21*/
+350 		/* gdd5min 30*/
+23  		/* twmax 31*/
+5.0   		/* gddbase (deg C) 33*/
+-1000  		/* min_temprange 34*/
+5.0  		/* emax 35*/
+0.06  		/* intc 36*/
+SUMMERGREEN 	/* phenology */
+C3   		/* pathway */
+-4.0 38.0 	/* lower and upper temperature limit for co2 (deg C) 24 27*/
+15 25 		/* lower and upper limit of temperature optimum for photosynthesis(deg C) 25 26*/
+-1000 -2.0	/* lower and upper coldest monthly mean temperature(deg C) 28 29*/
+BROADLEAVED 	/* leaftype */
+1.0 20  1.0  	/* turnover leaf  sapwood root 9 11 12*/
+CTON_LEAF CTON_SAP CTON_ROOT /* C:N mass ratio for leaf, sapwood, and root 13,14,15*/
+15  		/* crownarea_max 20*/
+1.2  		/* sapwood sapling 22*/
+/*--------------------------------------------------------------------------*/
+/* 8. pft */
+C3_PERENNIAL_GRASS
+"C3 perennial grass"
+GRASS
+0.80  		/* rootdist[0] 1 */
+0.20  		/* minwscal 3*/
+0.5  		/* gmin 4*/
+1.2		/* respcoeff 5*/
+100  		/* nmax 7*/
+0.01  		/* resist 8*/
+0.5  		/* sla 10*/
+0.75  		/* lmro_ratio 18*/
+100  		/* ramp 19*/
+0.001  		/* lai_sapl 21*/
+0 		/* gdd5min 30*/
+1000  		/* twmax 31*/
+5.0   		/* gddbase (deg C) 33*/
+-1000  		/* min_temprange 34*/
+5.0  		/* emax 35*/
+0.01  		/* intc 36*/
+ANY  	 	/* phenology */
+C3   		/* pathway */
+-4.0 45.0 	/* lower and upper temperature limit for co2 (deg C) 24 27*/
+10 30 		/* lower and upper limit of temperature optimum for photosynthesis(deg C) 25 26*/
+-1000 15.5	/* lower and upper coldest monthly mean temperature(deg C) 28 29*/
+1.0  2.0  	/* turnover leaf root 9 12*/
+CTON_LEAF CTON_ROOT /* C:N mass ratio for leaf and root 13,15*/
+/*--------------------------------------------------------------------------*/
+/* 9. pft */
+C4_PERENNIAL_GRASS
+"C4 perennial grass"
+GRASS
+0.80  		/* rootdist[0] 1 */
+0.20  		/* minwscal 3*/
+0.5  		/* gmin 4*/
+0.2		/* respcoeff 5*/
+100  		/* nmax 7*/
+0.01  		/* resist 8*/
+0.5  		/* sla 10*/
+0.75  		/* lmro_ratio 18*/
+100  		/* ramp 19*/
+0.001  		/* lai_sapl 21*/
+0 		/* gdd5min 30*/
+1000  		/* twmax 31*/
+5.0   		/* gddbase (deg C) 33*/
+-1000  		/* min_temprange 34*/
+7.0  		/* emax 35*/
+0.01  		/* intc 36*/
+ANY	 	/* phenology */
+C4   		/* pathway */
+6.0 55.0 	/* lower and upper temperature limit for co2 (deg C) 24 27*/
+20 45 		/* lower and upper limit of temperature optimum for photosynthesis(deg C) 25 26*/
+15.5 1000.0	/* lower and upper coldest monthly mean temperature(deg C) 28 29*/
+1.0 2.0  	/* turnover leaf root 9 12*/
+CTON_LEAF CTON_ROOT /* C:N mass ratio for leaf and root 13,15*/
+
+

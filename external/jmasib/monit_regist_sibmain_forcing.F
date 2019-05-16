@@ -1,0 +1,41 @@
+      SUBROUTINE MONIT_REGIST_SIBMAIN_FORCING
+!
+#ifdef MONYOS
+      USE SIB_MONIT, ONLY : IMONIT_LEVEL, IMONIT_SELECT
+#endif
+!
+      USE COM_RUNCONF_SIB0109 , ONLY :
+     1   JCN_SIB_ISLSCP       
+!
+      USE ISLSCP , ONLY : 
+     1   MONIT_REGIST_ISLSCP_MAIN 
+
+      USE ATM , ONLY : 
+     1   MONIT_REGIST_ATM_MAIN 
+!
+      USE FORCING, ONLY: MONIT_REGIST_FORCING
+!
+      use gswp2, only : gswp2_monit_regist_forcings 
+!
+      CHARACTER( 7)  :: CMARK 
+      CHARACTER(32)  :: CTITLE 
+      CHARACTER(13)  :: CUNIT
+!
+#ifdef MONYOS
+      IF ( IMONIT_LEVEL .GE. IMONIT_SELECT ) THEN
+        IF ( JCN_SIB_ISLSCP .EQ. 1 ) THEN
+          CALL MONIT_REGIST_ISLSCP_MAIN
+        ELSE IF ( JCN_SIB_ISLSCP .EQ. 2 ) THEN
+          CALL MONIT_REGIST_ATM_MAIN
+        ELSE IF (JCN_SIB_ISLSCP == 3) THEN
+	  CALL MONIT_REGIST_FORCING
+        ELSE IF (JCN_SIB_ISLSCP == 4) THEN
+	  CALL gswp2_monit_regist_forcings 
+        ENDIF
+      ENDIF
+#endif
+!
+      RETURN
+      END
+
+

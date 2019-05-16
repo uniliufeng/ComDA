@@ -1,0 +1,31 @@
+########################################################################
+##                                                                    ##
+##               M  a  k  e  f  i  l  e  .  w  i  n  3  2             ##
+##                                                                    ##
+##   Make include file for compiler and os specific settings          ##
+##   Compile and link options for Windows 32bit using free Microsoft  ##
+##   C/C++ Compiler                                                   ##
+##                                                                    ##
+##   written by Werner von Bloh                                       ##
+##   Potsdam Institute for Climate Impact Research                    ##
+##   P.O. Box 60 12 03                                                ##
+##   14412 Potsdam/Germany                                            ##
+##                                                                    ##
+##   Last change: 05.11.2004                                          ##
+##                                                                    ##
+########################################################################
+
+CC	= cl
+CFLAGS  = -O2 -DSAFE -D_USE_MATH_DEFINES
+O	= obj 
+A	= lib
+E	= .exe
+AR	= link 
+ARFLAGS	= /lib /out:
+RM	= del 
+RMFLAGS	= 
+LIB     =
+LINK	= link
+MKDIR	= -mkdir
+LNOPTS	= "/libpath=c:\Programme\Microsoft Visual C++ Toolkit 2003\lib" -out:		
+MAKE	= "c:\Programme\Microsoft Visual C++ Toolkit 2003\bin\nmake"  

@@ -1,0 +1,38 @@
+#######################################################################################
+             data file path for runing Common Land Model 
+#######################################################################################
+/home/wlx/ldas/veg_data/                                 ## vegetation data path
+/home/wlx/ldas/obs_data/ssmi/                            ## ssmi data path
+/home/wlx/ldas/obs_data/amsr/                            ## amsr data path
+/home/wlx/ldas/forc_data/                                ## meteorological data path
+/home/wlx/ldas/output_test/                          ## output data path
+/home/wlx/ldas/output_test/restart/                  ## output restart file path
+########################################################################################
+             data file for runing Common Land Model 
+########################################################################################
+/home/wlx/ldas/run/time_invariant_data.west      ##file name of time-invariant file 
+/home/wlx/ldas/run/time_variant_data.west        ##file name of time-variant file
+3600                                              ##time step (senconds)
+24                                              ## model step for simulation [-]
+1                                                 ## output varialbe file span 
+120                                               ## out restart file span
+120                                               ## row number of obs and forc grid
+160                                               ## col number of obs and forc grid
+120                                                ## row number of subregion grid
+160                                               ## col number of subregion grid
+0                                                 ## start row of subregion grid
+0                                                 ## start col of subregion grid
+7610                                              ## patch number of model grid
+50                                                ## ensemble size
+########################################################################################
+            Parameter required by frozen soil model
+########################################################################################
+/home/wlx/ldas/westchina/clay_west.900s                  ## clay percent for west China
+/home/wlx/ldas/westchina/sand_west.900s                  ## sand percent for west China
+########################################################################################
+            Parameter required by mask(land grid)
+########################################################################################
+/home/wlx/ldas/westchina/mask_west.900s        ##mask file  1 value; 0 no data(已经单独处理好）
+0.25 0.25                                      ##lat_span and lon_span 
+49.875 72.125                                  ##left,top corner point(lat,lon)
+

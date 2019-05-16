@@ -1,0 +1,34 @@
+########################################################################
+##                                                                    ##
+##               M  a  k  e  f  i  l  e  .  a  i  x                   ##
+##                                                                    ##
+##   Makefile for C implementation of LPJ                             ##
+##   Compile and link options are set for IBM compiler for Power4     ##
+##   and AIX                                                          ##
+##                                                                    ##
+##   written by Werner von Bloh                                       ##
+##   Potsdam Institute for Climate Impact Research                    ##
+##   P.O. Box 60 12 03                                                ##
+##   14412 Potsdam/Germany                                            ##
+##                                                                    ##
+##   Last change: 11.11.2004                                          ##
+##                                                                    ##
+########################################################################
+
+CC	= xlc
+CFLAGS  = -g  -O3 -qipa  -qarch=pwr4 -qtune=pwr4\
+          -qflttrap=invalid:zerodivide:enable -DSAFE  -DUSE_CPP\
+          -DUSE_UNAME -DUSE_RAND48 -DDEBUG
+                     
+      
+O	= o
+A	= a
+E	= 
+AR	= ar 
+ARFLAGS	= -r  
+RM	= rm 
+RMFLAGS	= -f
+LINK	= cc
+MKDIR	= mkdir -p
+LNOPTS  = $(CFLAGS) -o  
+LIBS	= -lm -lmass
