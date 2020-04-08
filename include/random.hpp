@@ -2,11 +2,11 @@
 #define __LDAS_RANDOM_H
 
 #ifdef __cplusplus
-extern "C" {
+//extern "C" {
 #endif
 #include "dSFMT.h"
 #ifdef __cplusplus
-}
+//}
 #endif
 
 #include "constant.h"
