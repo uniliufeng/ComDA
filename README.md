@@ -1,4 +1,4 @@
-Introducation of ComDA Version 1.0
+Introduction of ComDA Version 1.0
 
 Name: Common Software for Nonlinear and Non-Gaussian Land Data Assimilation
 
