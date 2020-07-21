@@ -15,8 +15,8 @@ Components libraries include IT++ (http://itpp.sourceforge.net/), LAPACK (http:/
 
 Cost: ComDA is freely available and can be downloaded from the GitHub repository (https://github.com/uniliufeng/ComDA).
 
-References:
-Liu F, Wang L, Li X, Huang C. 2019. ComDA: A Common Software for Nonlinear and Non-Gaussian Land Data Assimilation
+Reference:
+Liu F, Wang L X, Li X, Huang C L. 2020.  ComDA: A common software for nonlinear and Non-Gaussian Land Data Assimilation. Environmental Modelling & Software, 10.1016/j.envsoft.2020.104638. (https://doi.org/10.1016/j.envsoft.2020.104638)
 
 Introducation:
 ComDA is to achieve a fast, easy-to-use, and multidisciplinary application-oriented assimilation platform. ComDA integrates many algorithms (including diverse Kalman and particle filters) and multiple models and observation operators (e.g., CoLM, SiB2 and AIEM, Q/h), and provides the general interfaces for accepting more operators. Using mixed-language programming and parallel computing technologies (OpenMP, MPI and CUDA), ComDA can assimilate various land surface variables and remote sensing observations. ComDA can be applied in multidisciplinary data assimilation studies.
